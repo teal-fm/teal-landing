@@ -171,7 +171,7 @@ function App() {
         </div>
 
         <div className="mt-20 flex justify-center align-center gap-4">
-          <a href="https://bsky.app/profile/teal.fm">
+          <a href="https://bsky.app/profile/did:plc:iwhuynr6mm6xxuh25o4do2tx">
             <SiBluesky className="w-6 h-6" />
           </a>
           <a href="https://discord.gg/DMSZ3xFUpk">
