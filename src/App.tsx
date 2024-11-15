@@ -177,7 +177,7 @@ function App() {
           <a href="https://discord.gg/DMSZ3xFUpk">
             <SiDiscord className="w-6 h-6" />
           </a>
-          <a href="github.com/teal-fm">
+          <a href="https://github.com/teal-fm">
             <SiGithub className="w-6 h-6" />
           </a>
         </div>
