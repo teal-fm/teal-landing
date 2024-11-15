@@ -30,9 +30,9 @@ function App() {
   });
 
   const icons = [
-    <Music2 className="w-6 h-6" key="music" />,
-    <Radio className="w-6 h-6" key="radio" />,
-    <AudioLines className="w-6 h-6" key="lines" />,
+    <Music2 className="w-full h-full" key="music" />,
+    <Radio className="w-full h-full" key="radio" />,
+    <AudioLines className="w-full h-full" key="lines" />,
   ];
 
   const features = [
@@ -101,7 +101,7 @@ function App() {
           <div className="text-center space-y-6">
             <div className="flex items-center justify-center space-x-1">
               <CrossFade contentKey={String(currentIcon)} timeout={200}>
-                <div className="bg-teal-500 rounded-full p-1">
+                <div className="bg-teal-500 rounded-full p-3 h-16 w-16">
                   {icons[currentIcon]}
                 </div>
               </CrossFade>
