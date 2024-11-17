@@ -1,30 +1,27 @@
-import { useState, useEffect } from 'react';
 import {
-  Disc2,
+  AudioLines,
+  BarChart3,
+  ChevronDown,
   Music2,
   Radio,
-  AudioLines,
-  Mail,
-  BarChart3,
-  Users,
-  BoomBox,
-  Sparkles,
   Share2,
-  ChevronDown,
-} from 'lucide-react';
-import { ThemeToggle } from './components/ThemeToggle';
-import { FeatureCard } from './components/FeatureCard';
-import { CrossFade } from 'react-crossfade-simple';
+  Sparkles,
+  Users,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { CrossFade } from "react-crossfade-simple";
+import { FeatureCard } from "./components/FeatureCard";
+import { ThemeToggle } from "./components/ThemeToggle";
 
-import { SiDiscord, SiBluesky, SiGithub } from 'react-icons/si';
+import { SiBluesky, SiDiscord, SiGithub } from "react-icons/si";
 
 function App() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentIcon, setCurrentIcon] = useState(0);
   const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (typeof window !== "undefined") {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
     return true;
   });
@@ -37,32 +34,32 @@ function App() {
 
   const features = [
     {
-      title: 'Own your data',
+      title: "Own your data",
       description:
-        'Built on ATProto, you can take control of your sound, connect with your audience, and share your tastes with the world.',
+        "Built on ATProto, you can take control of your sound, connect with your audience, and share your tastes with the world.",
       icon: BarChart3,
-      gradient: 'bg-gradient-to-r from-teal-400/30 to-emerald-500/30',
+      gradient: "bg-gradient-to-r from-teal-400/30 to-emerald-500/30",
     },
     {
-      title: 'Social Discovery',
+      title: "Social Discovery",
       description:
-        'Connect with music lovers who share your taste and discover new tracks through community recommendations.',
+        "Connect with music lovers who share your taste and discover new tracks through community recommendations.",
       icon: Users,
-      gradient: 'bg-gradient-to-r from-blue-400/30 to-teal-500/30',
+      gradient: "bg-gradient-to-r from-blue-400/30 to-teal-500/30",
     },
     {
-      title: 'Universal Tracking',
+      title: "Universal Tracking",
       description:
-        'Seamlessly sync your listening history across Spotify, Apple Music, YouTube Music, and more platforms.',
+        "Seamlessly sync your listening history across Spotify, Apple Music, YouTube Music, and more platforms.",
       icon: Sparkles,
-      gradient: 'bg-gradient-to-r from-purple-400/30 to-pink-500/30',
+      gradient: "bg-gradient-to-r from-purple-400/30 to-pink-500/30",
     },
     {
-      title: 'Share Your Taste',
+      title: "Share Your Taste",
       description:
-        'Create beautiful cards of your top tracks and artists to share your music taste with the world.',
+        "Create beautiful cards of your top tracks and artists to share your music taste with the world.",
       icon: Share2,
-      gradient: 'bg-gradient-to-r from-orange-400/30 to-pink-500/30',
+      gradient: "bg-gradient-to-r from-orange-400/30 to-pink-500/30",
     },
   ];
 
@@ -74,13 +71,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDark);
+    document.documentElement.classList.toggle("dark", isDark);
   }, [isDark]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setEmail('');
+    setEmail("");
   };
 
   return (
@@ -111,15 +108,15 @@ function App() {
             </div>
 
             <p className="font-sans text-2xl sm:text-3xl text-teal-700 dark:text-teal-100 max-w-2xl mx-auto font-light transition-all">
-              Your music,{' '}
+              Your music,{" "}
               <span className="font-modern-serif font-medium text-teal-500">
                 beautifully
-              </span>{' '}
+              </span>{" "}
               tracked.
-              <br /> All{' '}
+              <br /> All{" "}
               <span className="text-teal-500 font-modern-serif font-medium text-teal-500">
                 yours
-              </span>{' '}
+              </span>{" "}
               <span className="">(soon)</span>.
             </p>
           </div>
@@ -146,7 +143,22 @@ function App() {
             <h2 className="text-xl font-semibold mb-4 text-black/50 dark:text-white/50">
               Stay updated (soon)
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <p className="dark:text-teal-100 text-gray-700">
+              Join our{" "}
+              <a href="https://discord.gg/DMSZ3xFUpk" className="underline">
+                Discord Server
+              </a>{" "}
+              and follow our{" "}
+              <a
+                href="https://bsky.app/profile/did:plc:iwhuynr6mm6xxuh25o4do2tx"
+                className="underline"
+              >
+                Bluesky account
+              </a>{" "}
+              to stay up to date with the latest news and updates.
+            </p>
+            {/* email waitlist */}
+            {/* <form onSubmit={handleSubmit} className="space-y-4">
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400 w-5 h-5" />
                 <input
@@ -166,7 +178,7 @@ function App() {
               >
                 {isSubmitted ? 'Thanks for joining!' : 'Join the waitlist'}
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
 
