@@ -80,6 +80,8 @@ function App() {
     setEmail("");
   };
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div
       className={`min-h-screen transition-colors duration-300 bg-gradient-to-br dark:from-gray-900 dark:via-gray-950 dark:to-teal-950
@@ -196,7 +198,7 @@ function App() {
 
         {/* Footer */}
         <footer className="mt-10 pb-8 text-center text-teal-600 dark:text-teal-400/60">
-          <p>© 2024 teal.fm - coming soon</p>
+          <p>© { currentYear } teal.fm - coming soon</p>
           <p>
             <span className="italic font-modern-serif">forever</span> open
             source
