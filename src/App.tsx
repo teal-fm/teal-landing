@@ -198,7 +198,7 @@ function App() {
 
         {/* Footer */}
         <footer className="mt-10 pb-8 text-center text-teal-600 dark:text-teal-400/60">
-          <p>© { currentYear } teal.fm - coming soon</p>
+          <p>© { currentYear } teal computing, LLC - coming soon</p>
           <p>
             <span className="italic font-modern-serif">forever</span> open
             source
